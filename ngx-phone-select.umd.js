@@ -28,7 +28,7 @@
          * @return {?}
          */
         NgxPhoneSelectDirective.prototype.ngAfterViewInit = function () {
-            $(this.el.nativeElement).intlTelInput();
+            $(this.el.nativeElement).intlTelInput({nationalMode: false});
             $(this.el.nativeElement).intlTelInput('setNumber", "+447733123456');
         };
         /**
