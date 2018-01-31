@@ -19,6 +19,11 @@ ngOnInit() {
     this.phoneSelect.onlyCountries(['us', 'ca', 'ph']);
 }
 
+submitForm() {
+    ...
+    const phone = this.phoneSelect.getNumberE164(); // will return +79184154140
+}
+
 ## Credits
 
 Full credit list at https://github.com/AnomalistDesignLLC/ngx-phone-select/blob/master/CREDITS.md
