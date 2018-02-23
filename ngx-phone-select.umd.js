@@ -28,7 +28,7 @@
          * @return {?}
          */
         NgxPhoneSelectDirective.prototype.ngAfterViewInit = function () {
-            $(this.el.nativeElement).intlTelInput({nationalMode: false});
+            $(this.el.nativeElement).intlTelInput({ nationalMode: false });
             $(this.el.nativeElement).intlTelInput('setNumber", "+447733123456');
         };
         /**
@@ -51,11 +51,18 @@
          * @return {?}
          */
         NgxPhoneSelectDirective.prototype.isValidNumber = function () {
-            if ($(this.el.nativeElement).intlTelInput('isValidNumber')) {
+            var requiredAttribute = $(this.el.nativeElement).attr('required');
+            var value = $(this.el.nativeElement).val();
+
+            if (!value && !requiredAttribute) {
                 return true;
-            }
-            else {
-                return false;
+            } else {
+                if ($(this.el.nativeElement).intlTelInput('isValidNumber')) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
         };
         /**
