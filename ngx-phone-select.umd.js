@@ -19,7 +19,7 @@
         NgxPhoneSelectDirective.prototype.validate = function (c) {
             if (!this.isValidNumber()) {
                 return {
-                    validatePhone: false
+                    validatePhone: true
                 };
             }
             return null;
